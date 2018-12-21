@@ -17,7 +17,11 @@
 </div>
 <button class="btn btn-primary" (click)="onButtonClick()">Display Details</button>
 <p *ngIf="showFlag">My secret password is TEST</p>
-<p *ngFor="let count of counters" [ngStyle]="{backgroundColor: count> 4 ? 'blue' : 'white'}" [ngClass]="{'white-text': count > 4}" >{{ count }}</p>
+<p *ngFor="let count of counters; let i = index" [ngStyle]="{backgroundColor: i>= 4 ? 'blue' : 'white'}"
+   [ngClass]="{'white-text': i >= 4}">{{ count }}</p>
+<!--[ngClass]="{'white-text': count > 4}">{{ count }}</p>
+<!--<p *ngFor="let count of counters" [ngStyle]="{backgroundColor: count> 4 ? 'blue' : 'white'}"-->
+<!--[ngClass]="{'white-text': count > 4}">{{ count }}</p> SECOND VARIANT-->
 <!--&lt;!&ndash;<p *ngFor="let count of counters" [ngClass]="{highlight: count > 4}">{{ count }}</p>&ndash;&gt; POSSIBLE VARIANT-->
 <ng-template>
 </ng-template>

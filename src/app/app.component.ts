@@ -11,6 +11,7 @@ export class AppComponent {
 
     onButtonClick() {
         this.showFlag = !this.showFlag;
-        this.counters.push(this.counters.length + 1);
+        // this.counters.push(this.counters.length + 1);
+        this.counters.push(new Date());
     }
 }
